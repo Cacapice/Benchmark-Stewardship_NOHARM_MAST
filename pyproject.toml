@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "benchmark-stewardship"
+version = "0.3.0"
+description = "Continuous measurement assurance and evidence-based stewardship for evolving benchmarks."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  {name = "Katherine J. Ombrellaro"}
+]
+keywords = [
+  "benchmark stewardship",
+  "benchmark surveillance",
+  "measurement assurance",
+  "machine learning evaluation",
+  "statistical process control"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: GNU Affero General Public License v3",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Scientific/Engineering :: Mathematics"
+]
+dependencies = []
+license = {file = "LICENSE"}
+
+[project.optional-dependencies]
+stats = [
+  "numpy>=1.24",
+  "scipy>=1.10"
+]
+dev = [
+  "pytest>=8",
+  "hypothesis>=6",
+  "build>=1",
+  "twine>=5"
+]
+
+[project.urls]
+Repository = "https://github.com/Cacapice/Benchmark-Stewardship_NOHARM_MAST"
+"Inferential Fidelity Framework" = "https://github.com/Cacapice/Inferential-Fidelity-Framework"
+"Bayesian Inferential Fidelity" = "https://github.com/Cacapice/Bayesian-Inferential-Fidelity"
+
+[tool.setuptools]
+py-modules = ["benchmark_tier_transfer_check"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["benchmark_stewardship*"]
+
+[tool.pytest.ini_options]
+testpaths = ["."]
+python_files = ["test_*.py"]
+addopts = "-q"
